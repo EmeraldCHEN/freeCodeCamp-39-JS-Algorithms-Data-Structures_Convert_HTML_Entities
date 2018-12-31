@@ -39,15 +39,17 @@ convertHTM2L("Hamburgers < Pizza < Tacos"); // return "Hamburgers &​lt; Pizza 
 /***********  Solution #3    **************************************************************************************************/
 
 function convertHTML(str){
-    const htmlEntities = {
+    const htmlEntities = { // Use Object Lookup to declare HTML entities
         '&':'&amp;',
         '<':'&lt;',
         '>':'&gt;',
         '"':'&quot;',
         "'":'&apos;'
-    }
+    };
+    // Split the original string by characters and use map to check for the changed HTML entity or use the same character
     return str.split('').map(element => htmlEntities[element] || element).join('');
 }
+
 
 
 // Retrieved from https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/convert-html-entities/
