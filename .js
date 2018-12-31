@@ -20,3 +20,14 @@ function convertHTML(str) {
       return str;    
     }
 convertHTML("Schindler's List"); // return "Schindler&​apos;s List"
+
+
+/***********  Solution #2    **************************************************************************************************/
+
+// Chaining of replace method with different arguments
+function convertHTML2(str) {
+    return str = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g,'&quot;').replace(/'/g,"&apos;");                  
+}
+
+
+// Retrieved from https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/convert-html-entities/
