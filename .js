@@ -26,7 +26,49 @@ convertHTML("Schindler's List"); // return "Schindler&​apos;s List"
 
 
 
+
 /***********  Solution #2    **************************************************************************************************/
+
+
+function convertHTML2(str){
+   // Split str into an array of characters
+    let tempStr = str.split(''); 
+    for(let i = 0; i < tempStr.length; i++){
+        // Use switch to check for a few HTML entities
+         switch(tempStr[i]){  
+            case'<':
+                tempStr[i] = '&lt;';
+                break;
+            case '&':
+                tempStr[i] = '&amp;';
+                break;
+            case '>':
+                tempStr[i] = '&gt;';
+                break;
+            case '"':
+                tempStr[i] = '&quot;';
+                break;
+            case "'":
+                tempStr[i] = "&apos;";
+                break;
+        }
+    }
+    return tempStr.join('');  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Chaining of replace method with different arguments
 function convertHTML2(str) {
@@ -49,6 +91,11 @@ function convertHTML(str){
     // Split the original string by characters and use map to check for the changed HTML entity or use the same character
     return str.split('').map(element => htmlEntities[element] || element).join('');
 }
+
+
+
+
+
 
 
 
