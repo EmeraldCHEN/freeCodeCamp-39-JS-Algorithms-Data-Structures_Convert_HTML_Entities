@@ -19,4 +19,4 @@ function convertHTML(str) {
       }
       return str;    
     }
-convertHTML("Schindler's List"); // return Schindler&​apos;s List.
+convertHTML("Schindler's List"); // return "Schindler&​apos;s List"
