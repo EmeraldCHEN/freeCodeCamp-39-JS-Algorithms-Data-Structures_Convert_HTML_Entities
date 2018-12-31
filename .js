@@ -2,6 +2,7 @@
 /***********  Solution #1    **************************************************************************************************/
 
 function convertHTML(str) {
+     // Split str into an array of characters
      let arr = str.split('');
      for(let i = 0; i < arr.length; i++){    
           if(arr[i] == '&'){
@@ -26,15 +27,12 @@ convertHTML("Schindler's List"); // return "Schindler&​apos;s List"
 
 
 
-
 /***********  Solution #2    **************************************************************************************************/
 
-
 function convertHTML2(str){
-   // Split str into an array of characters
     let tempStr = str.split(''); 
     for(let i = 0; i < tempStr.length; i++){
-        // Use switch to check for a few HTML entities
+        // Use switch to check for HTML entities since its number is small
          switch(tempStr[i]){  
             case'<':
                 tempStr[i] = '&lt;';
@@ -60,29 +58,19 @@ function convertHTML2(str){
 
 /***********  Solution #3    **************************************************************************************************/
 
-
-
-
-
-
-
-
-
-
-
-
 // Chaining of replace method with different arguments
-function convertHTML2(str) {
+function convertHTML3(str) {
     return str = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g,'&quot;').replace(/'/g,"&apos;");                  
 }
 convertHTM2L("Hamburgers < Pizza < Tacos"); // return "Hamburgers &​lt; Pizza &​lt; Tacos"
 
 
 
-/***********  Solution #3    **************************************************************************************************/
+/***********  Solution #4    **************************************************************************************************/
 
-function convertHTML(str){
-    const htmlEntities = { // Use Object Lookup to declare HTML entities
+function convertHTML4(str){
+    // Use Object Lookup to declare HTML entities
+     const htmlEntities = { 
         '&':'&amp;',
         '<':'&lt;',
         '>':'&gt;',
@@ -92,8 +80,6 @@ function convertHTML(str){
     // Split the original string by characters and use map to check for the changed HTML entity or use the same character
     return str.split('').map(element => htmlEntities[element] || element).join('');
 }
-
-
 
 
 
